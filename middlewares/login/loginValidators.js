@@ -23,3 +23,8 @@ const doLoginValidationHandler = function (req, res, next) {
         });
     }
 };
+
+module.exports = {
+    doLoginValidators,
+    doLoginValidationHandler,
+};

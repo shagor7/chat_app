@@ -121,7 +121,6 @@ input[type="submit"]:active {
   cursor: pointer;
   display: none;
 }
-
 .modal {
   width: 450px;
   z-index: 99;
@@ -170,7 +169,6 @@ input[type="submit"]:active {
   right: -8px;
   top: -8px;
 }
-
 .modal-close:active {
   transform: scale(0.95) rotate(45deg);
   background-color: var(--red);
@@ -196,7 +194,7 @@ input[type="submit"]:active {
   list-style-type: none;
 }
 
-.search_users ul>li {
+.search_users ul > li {
   background: var(--primary);
   padding: 7px;
   border: 1px solid var(--dark);
@@ -276,7 +274,10 @@ input[type="submit"]:active {
 #chat-container {
   display: grid;
   grid:
-    "search-container chat-title" 71px "conversation-list chat-message-list" 1fr "new-message-container chat-form" 78px /275px 1fr;
+    "search-container chat-title" 71px
+    "conversation-list chat-message-list" 1fr
+    "new-message-container chat-form" 78px
+    /275px 1fr;
   min-width: 800px;
   max-width: 1000px;
   width: 100%;
@@ -345,7 +346,7 @@ input[type="submit"]:active {
   cursor: pointer;
 }
 
-.conversation>img {
+.conversation > img {
   grid-row: span 2;
   width: 40px;
   height: 40px;
@@ -419,12 +420,12 @@ input[type="submit"]:active {
   padding: 0 20px;
 }
 
-#chat-title>img {
+#chat-title > img {
   cursor: pointer;
   height: 30px;
 }
 
-#chat-title>img:hover {
+#chat-title > img:hover {
   transform: scale(1.05);
 }
 
@@ -544,7 +545,10 @@ input[type="submit"]:active {
     min-width: 90%;
     height: 88vh;
     grid:
-      "search-container chat-title" 71px "conversation-list chat-message-list" 1fr "new-message-container chat-form" 78px /70px 1fr;
+      "search-container chat-title" 71px
+      "conversation-list chat-message-list" 1fr
+      "new-message-container chat-form" 78px
+      /70px 1fr;
   }
 
   .title-text,
@@ -757,7 +761,6 @@ input[type="submit"]:active {
   #users-table thead th:nth-child(2) {
     display: none;
   }
-
   #users-table thead th:last-of-type,
   #users-table tbody td:last-of-type {
     text-align: left;
@@ -768,8 +771,10 @@ input[type="submit"]:active {
 .toastify {
   color: var(--secondary);
   font-size: 14px !important;
-  background: -webkit-linear-gradient(to right,
-      var(--green) 0%,
-      var(--blue) 100%);
+  background: -webkit-linear-gradient(
+    to right,
+    var(--green) 0%,
+    var(--blue) 100%
+  );
   background: linear-gradient(to right, var(--green) 0%, var(--blue) 100%);
 }

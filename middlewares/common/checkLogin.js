@@ -1,3 +1,4 @@
+const createError = require("http-errors");
 const jwt = require("jsonwebtoken");
 
 // auth guard to protect routes that need authentication
@@ -51,8 +52,28 @@ const redirectLoggedIn = function (req, res, next) {
         res.redirect("/inbox");
     }
 };
+function requireRole(role) {
+    return function (req, res, next) {
+        if (req.user.role && role.includes(req.user.role)) {
+            next();
+        } else {
+            if (res.locals.html) {
+                next(createError(401, "you are not authorized to access this page!"));
+            } else {
+                res.status(401).json({
+                    errors: {
+                        common: {
+                            msg: "you are not authorized",
+                        },
+                    },
+                });
+            }
+        }
+    }
+}
 
 module.exports = {
     checkLogin,
     redirectLoggedIn,
+    requireRole,
 };
